@@ -1,4 +1,3 @@
-vim.keymap.set("n", "<leader>px", vim.cmd.Ex)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
@@ -13,11 +12,7 @@ vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.keymap.set("n", "<leader>y", "\"_y")
 vim.keymap.set("v", "<leader>y", "\"_y")
 vim.keymap.set("n", "<leader>Y", "\"_Y")
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>f", function()
-    vim.lsp.buf.format()
-end)
-
+vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
